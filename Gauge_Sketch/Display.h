@@ -12,7 +12,7 @@ public:
 
   void setup() {
     disp.begin(0x70);
-    displayText("Neat");
+    displayText("****");
   }
 
   void displayText(String text) {
