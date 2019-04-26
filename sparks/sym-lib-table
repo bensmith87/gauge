@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Gauge-rescue)(type Legacy)(uri ${KIPRJMOD}/Gauge-rescue.lib)(options "")(descr ""))
+)
