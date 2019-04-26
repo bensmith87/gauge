@@ -1,38 +1,40 @@
-#include <Stepper.h>
+#include <AccelStepper.h>
 
 #define STEPS_PER_REVOLUTION 600
-#define SPEED 60
+#define STEPPER_MAX_SPEED 1000
+#define STEPPER_ACCELERATION 400
 #define TACHO_PIN A1
 #define MAX_RPM 12000
 #define MIN_PULSE_DURATION 60.0 / MAX_RPM * 1000000 // micros
 
 class Tacho {
-  Stepper stepper = Stepper(STEPS_PER_REVOLUTION, 10, 11, 12, 13);
-  int position = 0; // steps
+  AccelStepper stepper = AccelStepper(AccelStepper::FULL4WIRE, 10, 11, 12, 13);
   
   static volatile int pulsePeriod;    // micros
   static unsigned long lastPulseTime; // micros
   
 public:
   void setup() {
-    stepper.setSpeed(SPEED);
+    stepper.setMaxSpeed(STEPPER_MAX_SPEED);
+    stepper.setAcceleration(STEPPER_ACCELERATION);
 
     // Home
-    stepper.step(-STEPS_PER_REVOLUTION);
-    stepper.step(STEPS_PER_REVOLUTION);
+    stepper.runToNewPosition(STEPS_PER_REVOLUTION);
+    stepper.runToNewPosition(0);
 
     pinMode(TACHO_PIN, INPUT_PULLDOWN);
     attachInterrupt(digitalPinToInterrupt(TACHO_PIN), interrupt, FALLING);
   }
 
   void update() {
-    if (pulsePeriod != 0) {
+    stepper.run();
+    
+    if (pulsePeriod > 0) {
       double frequency = 1000000.0 / pulsePeriod;
-      pulsePeriod = 0;
+      pulsePeriod = -1;
       double rpm = min(frequency * 60, MAX_RPM);
-      int newPosition = rpm / MAX_RPM * STEPS_PER_REVOLUTION;
-      stepper.step(position - newPosition);
-      position = newPosition;
+      int position = rpm / MAX_RPM * STEPS_PER_REVOLUTION;
+      stepper.moveTo(position);
     }
   }
 
@@ -45,5 +47,5 @@ public:
   }
 };
 
-volatile int Tacho::pulsePeriod = 0;
+volatile int Tacho::pulsePeriod = -1;
 unsigned long Tacho::lastPulseTime = 0;
