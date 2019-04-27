@@ -1,8 +1,8 @@
 #include <AccelStepper.h>
 
 #define MAX_STEPS 600 / 315.0 * 240.0
-#define STEPPER_MAX_SPEED 2000
-#define STEPPER_ACCELERATION 1000
+#define STEPPER_MAX_SPEED 4000
+#define STEPPER_ACCELERATION 10000
 #define TACHO_PIN A1
 #define MIN_RPM 100
 #define MAX_RPM 12000
@@ -22,10 +22,12 @@ public:
     stepper.setAcceleration(STEPPER_ACCELERATION);
 
     // Home
+    for (int i = 0; i < 100; i++) {
     stepper.runToNewPosition(MAX_STEPS);
     stepper.runToNewPosition(0);
+    }
 
-    pinMode(TACHO_PIN, INPUT);
+    pinMode(TACHO_PIN, INPUT_PULLUP);
     attachInterrupt(digitalPinToInterrupt(TACHO_PIN), interrupt, RISING);
   }
 

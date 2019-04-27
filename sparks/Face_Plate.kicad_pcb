@@ -101,7 +101,7 @@
     (uvia_drill 0.1)
   )
 
-  (gr_circle (center 124 116) (end 124.5 116) (layer Edge.Cuts) (width 0.15))
+  (gr_circle (center 124 116) (end 124.45 116) (layer Edge.Cuts) (width 0.15))
   (gr_circle (center 171 94) (end 175 94) (layer Edge.Cuts) (width 0.2) (tstamp 5CBF87C4))
   (gr_circle (center 171 106) (end 175 106) (layer Edge.Cuts) (width 0.2) (tstamp 5CBF87C9))
   (gr_circle (center 129 106) (end 133 106) (layer Edge.Cuts) (width 0.2))
