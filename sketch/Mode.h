@@ -15,6 +15,8 @@ public:
     title = newTitle;
   }
 
+  void setup() { }
+
   void start() {
     timer = millis();
   }

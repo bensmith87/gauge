@@ -22,10 +22,8 @@ public:
     stepper.setAcceleration(STEPPER_ACCELERATION);
 
     // Home
-    for (int i = 0; i < 100; i++) {
     stepper.runToNewPosition(MAX_STEPS);
     stepper.runToNewPosition(0);
-    }
 
     pinMode(TACHO_PIN, INPUT_PULLUP);
     attachInterrupt(digitalPinToInterrupt(TACHO_PIN), interrupt, RISING);

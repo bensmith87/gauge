@@ -6,6 +6,8 @@
 #include "Clock.h"
 #include "Gps.h"
 #include "Tacho.h"
+#include "Battery.h"
+#include "Afr.h"
 
 Display display = Display();
 Button button = Button();
@@ -17,13 +19,17 @@ Speedo speedo = Speedo(&gps);
 Trip trip = Trip(&gps);
 Odo odo = Odo(&gps);
 Clock clock = Clock(&gps);
+Battery battery = Battery();
+Afr afr = Afr();
 Mode* modes[] = {
   &speedo,
   &trip,
   &odo,
-  &clock
+  &clock,
+  &battery,
+  &afr
 };
-int numberOfModes = 4;
+int numberOfModes = 6;
 int currentMode = 0;
 
 bool showTitle = false;
@@ -33,6 +39,10 @@ void setup() {
   button.setup();
   gps.setup();
   tacho.setup();
+
+  for (int i = 0; i < numberOfModes; i++) {
+    modes[i]->setup();
+  }
   
   modes[currentMode]->start();
 }
