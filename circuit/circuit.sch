@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:Gauge-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,17 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Gauge-rescue:L293D-New_Library U4
-U 1 1 5CB8E603
-P 8450 5050
-F 0 "U4" H 9028 5096 50  0000 L CNN
-F 1 "L293D" H 9028 5005 50  0000 L CNN
-F 2 "Footprints:L293D" H 8350 5050 50  0001 C CNN
-F 3 "" H 8350 5050 50  0001 C CNN
-	1    8450 5050
-	1    0    0    -1  
-$EndComp
 $Comp
 L LED:CQY99 D4
 U 1 1 5CB8F18D
@@ -359,9 +347,6 @@ F 3 "" H 4100 5700 50  0001 C CNN
 	1    4100 5700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8500 5650 8350 5650
-Connection ~ 8350 5650
 $Comp
 L power:GND #PWR0124
 U 1 1 5CCB97B6
@@ -382,30 +367,8 @@ Wire Wire Line
 Wire Wire Line
 	8350 4350 7500 4350
 Connection ~ 8350 4350
-$Comp
-L Gauge-rescue:Feather-New_Library U2
-U 1 1 5CBFD77E
-P 3450 5850
-F 0 "U2" H 3450 6865 50  0000 C CNN
-F 1 "Feather" H 3450 6774 50  0000 C CNN
-F 2 "Footprints:Feather" H 3450 5850 50  0001 C CNN
-F 3 "" H 3450 5850 50  0001 C CNN
-	1    3450 5850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3900 5700 4100 5700
-$Comp
-L Gauge-rescue:TSR12450-New_Library U1
-U 1 1 5CC457F0
-P 2100 3450
-F 0 "U1" H 2100 3775 50  0000 C CNN
-F 1 "TSR12450" H 2100 3684 50  0000 C CNN
-F 2 "Footprints:TSR1" H 2100 3450 50  0001 C CNN
-F 3 "" H 2100 3450 50  0001 C CNN
-	1    2100 3450
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:Conn_01x04_Male J5
 U 1 1 5CC9D306
@@ -735,4 +698,26 @@ F 3 "~" H 6350 1150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 6350 1300
+$Comp
+L library:TSR12450 U?
+U 1 1 5CC85FA4
+P 2100 3450
+F 0 "U?" H 2100 3775 50  0000 C CNN
+F 1 "TSR12450" H 2100 3684 50  0000 C CNN
+F 2 "" H 2100 3450 50  0001 C CNN
+F 3 "" H 2100 3450 50  0001 C CNN
+	1    2100 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L library:L293D U?
+U 1 1 5CC8619E
+P 8450 5050
+F 0 "U?" H 9028 5096 50  0000 L CNN
+F 1 "L293D" H 9028 5005 50  0000 L CNN
+F 2 "" H 8350 5050 50  0001 C CNN
+F 3 "" H 8350 5050 50  0001 C CNN
+	1    8450 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -8,7 +8,7 @@
 class Mode {
   String title;
   String value = "----";
-  long timer = 0;
+  long startTime = 0;
   
 public:
   Mode(String newTitle) {
@@ -18,20 +18,28 @@ public:
   void setup() { }
 
   void start() {
-    timer = millis();
+    startTime = millis();
+  }
+
+  virtual void update() = 0;
+  virtual boolean handlePress(boolean longPress) {
+    return false;
+  }
+
+  boolean isTitleDisplayed() {
+    return millis() - startTime < TITLE_DURATION;
   }
   
-  virtual void update(boolean longPress) = 0;
-  
   void display(Display* display) {
-    if (millis() - timer < TITLE_DURATION) {
+    if (isTitleDisplayed()) {
       display->displayText(title);
     }
     else {
       display->displayText(value);
     }
   }
-  
+
+protected:
   void setValue(String newValue) {
     value = newValue;
   }

@@ -13,11 +13,11 @@ class Afr : public Mode {
 public:
   Afr() : Mode("AFR") { }
 
-  void update(boolean longPress) {
+  void update() {
     double voltage = analogRead(AFR_PIN) / 1024.0 * 3.3 * (R1 + R2) / R2;
     double afr = voltage / 5 * (AFR_MAX - AFR_MIN) + AFR_MIN;
-    char afrText[4];
-    sprintf(afrText, "%4f", afr);
+    char afrText[5];
+    sprintf(afrText, "%5.1f", afr);
     setValue(afrText);
   }
 };

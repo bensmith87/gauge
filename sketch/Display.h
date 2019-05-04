@@ -9,7 +9,6 @@ class Display {
   Adafruit_AlphaNum4 disp = Adafruit_AlphaNum4();
   
 public:
-
   void setup() {
     disp.begin(0x70);
     displayText("****");

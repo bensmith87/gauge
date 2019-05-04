@@ -9,10 +9,10 @@ class Battery : public Mode {
 public:
   Battery() : Mode("BATT") { }
 
-  void update(boolean longPress) {
+  void update() {
     double voltage = analogRead(BATTERY_PIN) / 1024.0 * 3.3 * (R1 + R2) / R2;
-    char battText[4];
-    sprintf(battText, "%3f", voltage);
+    char battText[5];
+    sprintf(battText, "%4.1fV", voltage);
     setValue(battText);
   }
 };

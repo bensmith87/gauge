@@ -9,7 +9,7 @@ public:
     gps = newGps;
   }
 
-  void update(boolean longPress) {
+  void update() {
     char odoText[4];
     sprintf(odoText, "%4d", round(gps->getOdo() / 1000));
     setValue(odoText);

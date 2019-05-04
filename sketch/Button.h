@@ -36,6 +36,10 @@ public:
     lastDown = down;
   }
 
+  boolean isPressed() {
+    return shortPress || longPress;
+  }
+
   boolean isShortPress() {
     return shortPress;
   }

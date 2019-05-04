@@ -19,12 +19,13 @@ public:
     gps.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);
   }
 
-  boolean update() {
+  void update() {
     gps.read();
     
     if (gps.newNMEAreceived()) {
       if (!gps.parse(gps.lastNMEA())) {
-        return false;
+        Serial.println("GPS failed!");
+        return;
       }
     }
 
@@ -44,20 +45,14 @@ public:
         lastLongitude = longitude;
       }
     }
-
-    return true;
   }
 
   int getHour() {
-    return (gps.hour + 10) % 24;
+    return gps.hour;
   }
 
   int getMinute() {
     return gps.minute;
-  }
-
-  int getSeconds() {
-    return gps.seconds;
   }
 
   double getSpeed() {

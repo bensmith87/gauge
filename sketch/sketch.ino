@@ -8,17 +8,18 @@
 #include "Tacho.h"
 #include "Battery.h"
 #include "Afr.h"
+#include "Settings.h"
 
+Settings settings = Settings();
 Display display = Display();
 Button button = Button();
 Gps gps = Gps();
-
 Tacho tacho = Tacho();
 
 Speedo speedo = Speedo(&gps);
 Trip trip = Trip(&gps);
 Odo odo = Odo(&gps);
-Clock clock = Clock(&gps);
+Clock clock = Clock(&settings, &gps);
 Battery battery = Battery();
 Afr afr = Afr();
 Mode* modes[] = {
@@ -29,12 +30,14 @@ Mode* modes[] = {
   &battery,
   &afr
 };
-int numberOfModes = 6;
+int numberOfModes = sizeof(modes) / sizeof(Mode*);
 int currentMode = 0;
 
-bool showTitle = false;
-
 void setup() {
+  Serial.begin(9600);
+  while (!Serial) { ; }
+  
+  settings.setup();
   display.setup();
   button.setup();
   gps.setup();
@@ -48,23 +51,24 @@ void setup() {
 }
 
 void loop() {
+  settings.update();
   button.update();
-
   tacho.update();
-  
-  if(!gps.update()) {
-    Serial.println("FAILED GPS");
-    return;
-  }
-
-  if (button.isShortPress()) {
-    currentMode = (currentMode + 1) % numberOfModes;
-    modes[currentMode]->start();
-  }    
+  gps.update();
 
   for (int i = 0; i < numberOfModes; i++) {
-    boolean longPress = i == currentMode ? button.isLongPress() : false;
-    modes[i]->update(longPress);
+    modes[i]->update();
+  }
+
+  if (button.isPressed()) {
+    boolean pressConsumed = modes[currentMode]->handlePress(button.isLongPress());
+    
+    if (button.isShortPress() && !pressConsumed) {
+      if (modes[currentMode]->isTitleDisplayed()) {
+        currentMode = (currentMode + 1) % numberOfModes;
+      }
+      modes[currentMode]->start();
+    }
   }
 
   modes[currentMode]->display(&display);

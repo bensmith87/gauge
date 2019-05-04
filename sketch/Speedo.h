@@ -9,7 +9,7 @@ public:
     gps = newGps;
   }
 
-  void update(boolean longPress) {
+  void update() {
     int kph = round(gps->getSpeed());
     char speed[4];
     sprintf(speed, "%4d", kph);
