@@ -3,17 +3,22 @@
 
 #include <Adafruit_GPS.h>
 
+#include "Settings.h"
+
 #define WORLD_RADIUS 6371000.0
 #define MIN_DISTANCE 100
 
 class Gps {
+  Settings* settings;
   Adafruit_GPS gps = Adafruit_GPS(&Serial1);
   double lastLatitude = 0;
   double lastLongitude = 0;
-  double odo = 0;
-  double trip = 0;
   
 public:
+  Gps(Settings* newSettings) {
+    settings = newSettings;
+  }
+  
   void setup() {
     gps.begin(9600);
     gps.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);
@@ -39,8 +44,8 @@ public:
       double dist = distance(lastLatitude, lastLongitude, latitude, longitude);
       
       if (!isnan(dist) && dist > MIN_DISTANCE) {
-        odo += dist;
-        trip += dist;
+        settings->odo += dist;
+        settings->trip += dist;
         lastLatitude = latitude;
         lastLongitude = longitude;
       }
@@ -60,15 +65,15 @@ public:
   }
 
   double getOdo() {
-    return odo;
+    return settings->odo;
   }
 
   double getTrip() {
-    return trip;
+    return settings->trip;
   }
 
   double resetTrip() {
-    trip = 0;
+    settings->trip = 0;
   }
 
 private:

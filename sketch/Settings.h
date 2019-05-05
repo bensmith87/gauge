@@ -4,6 +4,10 @@
 #include <SD.h>
 
 #define WRITE_PERIOD 10000
+#define TRIP "trip="
+#define ODO "odo="
+#define HOUR_OFFSET "hourOffset="
+#define MINUTE_OFFSET "minuteOffset="
 
 enum TempUnit {
   DEGREES_CELCIUS,
@@ -38,7 +42,9 @@ public:
       while (1);
     }
 
-      Serial.println("Done");
+    read();
+
+    Serial.println("Done");
   }
 
   void update() {
@@ -52,7 +58,23 @@ public:
   
 private:
   void read() {
-    
+    File file = SD.open("settings.txt");
+    if (file) {
+      while (file.available()) {
+        String line = file.readStringUntil('\n');
+        Serial.println(line);
+        if (line.startsWith(TRIP)) {
+          trip = line.substring(sizeof(TRIP) - 1).toDouble();
+        } else if (line.startsWith(ODO)) {
+          odo = line.substring(sizeof(ODO) - 1).toDouble();
+        } else if (line.startsWith(HOUR_OFFSET)) {
+          hourOffset = line.substring(sizeof(HOUR_OFFSET) - 1).toInt();
+        } else if (line.startsWith(MINUTE_OFFSET)) {
+          minuteOffset = line.substring(sizeof(MINUTE_OFFSET) - 1).toInt();
+        }
+      }
+      file.close();
+    }
   }
 
   void backup() {
@@ -67,16 +89,24 @@ private:
   void write() {
     File file = SD.open("settings.txt", FILE_WRITE);
     if (file) {
-      Serial.print("Writing Settings...");
+      Serial.println("Writing Settings...");
 
       char line[50];
-      sprintf(line, "trip = %f", trip);
+      
+      sprintf(line, "%s%f", TRIP, trip);
+      Serial.println(line);
       file.println(line);
-      sprintf(line, "odo = %f", odo);
+      
+      sprintf(line, "%s%f", ODO, odo);
+      Serial.println(line);
       file.println(line);
-      sprintf(line, "hourOffset = %d", hourOffset);
+      
+      sprintf(line, "%s%d", HOUR_OFFSET, hourOffset);
+      Serial.println(line);
       file.println(line);
-      sprintf(line, "minuteOffset = %d", minuteOffset);
+      
+      sprintf(line, "%s%d", MINUTE_OFFSET, minuteOffset);
+      Serial.println(line);
       file.println(line);
       
       file.close();

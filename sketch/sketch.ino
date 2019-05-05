@@ -13,7 +13,7 @@
 Settings settings = Settings();
 Display display = Display();
 Button button = Button();
-Gps gps = Gps();
+Gps gps = Gps(&settings);
 Tacho tacho = Tacho();
 
 Speedo speedo = Speedo(&gps);
@@ -35,10 +35,9 @@ int currentMode = 0;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial) { ; }
   
-  settings.setup();
   display.setup();
+  settings.setup();
   button.setup();
   gps.setup();
   tacho.setup();

@@ -10,8 +10,8 @@ public:
   }
 
   void update() {
-    char tripText[4];
-    sprintf(tripText, "%4d", round(gps->getTrip() / 1000));
+    char tripText[5];
+    sprintf(tripText, "%5.1f", gps->getTrip() / 1000);
     setValue(tripText);
   }
 
