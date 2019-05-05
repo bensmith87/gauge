@@ -1,6 +1,6 @@
 #include "Mode.h"
 
-#define AFR_PIN A2
+#define AFR_PIN 5
 #define R1 4700
 #define R2 10000
 

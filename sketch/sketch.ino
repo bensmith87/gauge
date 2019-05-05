@@ -8,6 +8,7 @@
 #include "Tacho.h"
 #include "Battery.h"
 #include "Afr.h"
+#include "OilTemp.h"
 #include "Settings.h"
 
 Settings settings = Settings();
@@ -22,13 +23,15 @@ Odo odo = Odo(&gps);
 Clock clock = Clock(&settings, &gps);
 Battery battery = Battery();
 Afr afr = Afr();
+OilTemp oilTemp = OilTemp();
 Mode* modes[] = {
   &speedo,
   &trip,
   &odo,
   &clock,
   &battery,
-  &afr
+  &afr,
+  &oilTemp
 };
 int numberOfModes = sizeof(modes) / sizeof(Mode*);
 int currentMode = 0;
