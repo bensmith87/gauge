@@ -59,13 +59,7 @@ F 3 "https://www.prtice.info/IMG/pdf/CQY99.pdf" H 10450 1200 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	2100 3900 1600 3900
-Wire Wire Line
 	1600 3900 1600 3700
-Wire Wire Line
-	2450 3350 2450 4000
-Wire Wire Line
-	2450 4000 1400 4000
 Wire Wire Line
 	1400 4000 1400 3800
 $Comp
@@ -111,7 +105,7 @@ Wire Wire Line
 	1600 3700 1400 3700
 Connection ~ 1750 2050
 Wire Wire Line
-	1750 2050 1750 3350
+	1750 2050 1750 3250
 $Comp
 L Switch:SW_Push SW1
 U 1 1 5CB9D4F5
@@ -174,12 +168,12 @@ Connection ~ 10800 2300
 $Comp
 L power:+12V #PWR0114
 U 1 1 5CBD1F19
-P 2550 2050
-F 0 "#PWR0114" H 2550 1900 50  0001 C CNN
-F 1 "+12V" H 2565 2223 50  0000 C CNN
-F 2 "" H 2550 2050 50  0001 C CNN
-F 3 "" H 2550 2050 50  0001 C CNN
-	1    2550 2050
+P 3000 2050
+F 0 "#PWR0114" H 3000 1900 50  0001 C CNN
+F 1 "+12V" H 3015 2223 50  0000 C CNN
+F 2 "" H 3000 2050 50  0001 C CNN
+F 3 "" H 3000 2050 50  0001 C CNN
+	1    3000 2050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -527,13 +521,6 @@ F 3 "" H 2300 6000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2300 5400 2300 4250
-Wire Wire Line
-	2300 4250 2550 4250
-Wire Wire Line
-	2550 4250 2550 2050
-Connection ~ 2550 2050
-Wire Wire Line
-	1750 2050 2550 2050
 $Comp
 L Connector:Conn_01x05_Male J2
 U 1 1 5CD563C4
@@ -587,7 +574,7 @@ F 3 "https://www.vishay.com/docs/81181/4n35.pdf" H 4000 2150 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3400 2050 2550 2050
+	3400 2050 3000 2050
 $Comp
 L Device:LED D1
 U 1 1 5CC6D33E
@@ -700,17 +687,6 @@ F 3 "~" H 6350 1150 50  0001 C CNN
 $EndComp
 Connection ~ 6350 1300
 $Comp
-L library:TSR12450 U1
-U 1 1 5CC85FA4
-P 2100 3450
-F 0 "U1" H 2100 3775 50  0000 C CNN
-F 1 "TSR12450" H 2100 3684 50  0000 C CNN
-F 2 "Footprints:TSR1" H 2100 3450 50  0001 C CNN
-F 3 "" H 2100 3450 50  0001 C CNN
-	1    2100 3450
-	1    0    0    -1  
-$EndComp
-$Comp
 L library:L293D U4
 U 1 1 5CC8619E
 P 8450 5050
@@ -732,4 +708,32 @@ F 3 "" H 3450 5850 50  0001 C CNN
 	1    3450 5850
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3000 4250 3000 2050
+Wire Wire Line
+	2300 4250 3000 4250
+Connection ~ 3000 2050
+Wire Wire Line
+	1750 2050 3000 2050
+$Comp
+L Regulator_Switching:TSR_1-2450 U1
+U 1 1 5CD33323
+P 2350 3350
+F 0 "U1" H 2350 3717 50  0000 C CNN
+F 1 "TSR_1-2450" H 2350 3626 50  0000 C CNN
+F 2 "Converter_DCDC:Converter_DCDC_TRACO_TSR-1_THT" H 2350 3200 50  0001 L CIN
+F 3 "http://www.tracopower.com/products/tsr1.pdf" H 2350 3350 50  0001 C CNN
+	1    2350 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 4000 2750 3250
+Wire Wire Line
+	1400 4000 2750 4000
+Wire Wire Line
+	2350 3900 2350 3550
+Wire Wire Line
+	1600 3900 2350 3900
+Wire Wire Line
+	1950 3250 1750 3250
 $EndSCHEMATC
