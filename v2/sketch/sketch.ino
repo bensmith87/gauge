@@ -1,4 +1,5 @@
 #include "Button.h"
+#include "Display.h"
 #include "Mode.h"
 #include "Speedo.h"
 #include "Trip.h"

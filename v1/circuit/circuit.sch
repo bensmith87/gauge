@@ -703,7 +703,7 @@ U 1 1 5CCEA291
 P 3450 5850
 F 0 "U2" H 3450 6865 50  0000 C CNN
 F 1 "Feather" H 3450 6774 50  0000 C CNN
-F 2 "Footprints:Feather" H 3450 5850 50  0001 C CNN
+F 2 "footprints:Feather" H 3450 5850 50  0001 C CNN
 F 3 "" H 3450 5850 50  0001 C CNN
 	1    3450 5850
 	1    0    0    -1  

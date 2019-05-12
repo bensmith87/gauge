@@ -10,7 +10,7 @@ class Button {
   
 public:
   void setup() {
-    pinMode(PIN, INPUT_PULLDOWN);
+    pinMode(PIN, INPUT_PULLUP);
   }
 
   void update() {
