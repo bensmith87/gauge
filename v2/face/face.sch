@@ -1,0 +1,267 @@
+EESchema Schematic File Version 4
+LIBS:circuit-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR0101
+U 1 1 5CBAF45E
+P 7400 4850
+F 0 "#PWR0101" H 7400 4600 50  0001 C CNN
+F 1 "GND" H 7405 4677 50  0000 C CNN
+F 2 "" H 7400 4850 50  0001 C CNN
+F 3 "" H 7400 4850 50  0001 C CNN
+	1    7400 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 4450 7400 4450
+Wire Wire Line
+	7400 4450 7400 4850
+Wire Wire Line
+	7200 3750 7400 3750
+Wire Wire Line
+	7200 3350 7400 3350
+Wire Wire Line
+	7400 3350 7400 3750
+Wire Wire Line
+	7200 4850 7400 4850
+Connection ~ 7400 4850
+Text Notes 3800 3400 0    50   ~ 0
+OIL PRESSURE
+Text Notes 4050 3750 0    50   ~ 0
+NEUTRAL
+Text Notes 3950 4100 0    50   ~ 0
+HIGH BEAM
+Text Notes 3900 4450 0    50   ~ 0
+INDICATORS
+Wire Wire Line
+	4650 3350 6300 3350
+$Comp
+L Device:R R1
+U 1 1 5CCC7660
+P 6450 3350
+F 0 "R1" V 6657 3350 50  0000 C CNN
+F 1 "220" V 6566 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6380 3350 50  0001 C CNN
+F 3 "~" H 6450 3350 50  0001 C CNN
+	1    6450 3350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6600 3350 6900 3350
+$Comp
+L Device:R R2
+U 1 1 5CCC7E96
+P 6450 3750
+F 0 "R2" V 6657 3750 50  0000 C CNN
+F 1 "220" V 6566 3750 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6380 3750 50  0001 C CNN
+F 3 "~" H 6450 3750 50  0001 C CNN
+	1    6450 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5CCC7F21
+P 6450 4450
+F 0 "R3" V 6657 4450 50  0000 C CNN
+F 1 "220" V 6566 4450 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6380 4450 50  0001 C CNN
+F 3 "~" H 6450 4450 50  0001 C CNN
+	1    6450 4450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5CCC7FB2
+P 6450 4850
+F 0 "R4" V 6657 4850 50  0000 C CNN
+F 1 "220" V 6566 4850 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6380 4850 50  0001 C CNN
+F 3 "~" H 6450 4850 50  0001 C CNN
+	1    6450 4850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6600 3750 6900 3750
+Wire Wire Line
+	6600 4450 6900 4450
+Wire Wire Line
+	6600 4850 6900 4850
+Wire Wire Line
+	6200 4450 6300 4450
+Wire Wire Line
+	6100 4850 6300 4850
+$Comp
+L Device:LED D1
+U 1 1 5CEA1E49
+P 7050 3350
+F 0 "D1" H 7041 3566 50  0000 C CNN
+F 1 "LED" H 7041 3475 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 7050 3350 50  0001 C CNN
+F 3 "~" H 7050 3350 50  0001 C CNN
+	1    7050 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5CEA1ED9
+P 7050 3750
+F 0 "D2" H 7041 3966 50  0000 C CNN
+F 1 "LED" H 7041 3875 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 7050 3750 50  0001 C CNN
+F 3 "~" H 7050 3750 50  0001 C CNN
+	1    7050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 5CEA1F33
+P 7050 4450
+F 0 "D3" H 7041 4666 50  0000 C CNN
+F 1 "LED" H 7041 4575 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 7050 4450 50  0001 C CNN
+F 3 "~" H 7050 4450 50  0001 C CNN
+	1    7050 4450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 5CEA1FE7
+P 7050 4850
+F 0 "D4" H 7041 5066 50  0000 C CNN
+F 1 "LED" H 7041 4975 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 7050 4850 50  0001 C CNN
+F 3 "~" H 7050 4850 50  0001 C CNN
+	1    7050 4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+12V #PWR0102
+U 1 1 5CE09913
+P 7400 3350
+F 0 "#PWR0102" H 7400 3200 50  0001 C CNN
+F 1 "+12V" H 7415 3523 50  0000 C CNN
+F 2 "" H 7400 3350 50  0001 C CNN
+F 3 "" H 7400 3350 50  0001 C CNN
+	1    7400 3350
+	1    0    0    -1  
+$EndComp
+Connection ~ 7400 3350
+Text Notes 4200 4800 0    50   ~ 0
+12V
+Text Notes 4200 5150 0    50   ~ 0
+GND
+$Comp
+L power:+12V #PWR0103
+U 1 1 5CE0A25A
+P 4650 4750
+F 0 "#PWR0103" H 4650 4600 50  0001 C CNN
+F 1 "+12V" V 4665 4878 50  0000 L CNN
+F 2 "" H 4650 4750 50  0001 C CNN
+F 3 "" H 4650 4750 50  0001 C CNN
+	1    4650 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5CE0A280
+P 4650 5100
+F 0 "#PWR0104" H 4650 4850 50  0001 C CNN
+F 1 "GND" H 4655 4927 50  0000 C CNN
+F 2 "" H 4650 5100 50  0001 C CNN
+F 3 "" H 4650 5100 50  0001 C CNN
+	1    4650 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 5CE0B06A
+P 4450 3350
+F 0 "J1" H 4370 3125 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 3216 50  0000 C CNN
+F 2 "footprints:wire-pad" H 4450 3350 50  0001 C CNN
+F 3 "~" H 4450 3350 50  0001 C CNN
+	1    4450 3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5CE0B1AE
+P 4450 3700
+F 0 "J2" H 4370 3475 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 3566 50  0000 C CNN
+F 2 "footprints:wire-pad" H 4450 3700 50  0001 C CNN
+F 3 "~" H 4450 3700 50  0001 C CNN
+	1    4450 3700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J3
+U 1 1 5CE0B1DC
+P 4450 4050
+F 0 "J3" H 4370 3825 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 3916 50  0000 C CNN
+F 2 "footprints:wire-pad" H 4450 4050 50  0001 C CNN
+F 3 "~" H 4450 4050 50  0001 C CNN
+	1    4450 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 5CE0B204
+P 4450 4400
+F 0 "J4" H 4370 4175 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 4266 50  0000 C CNN
+F 2 "footprints:wire-pad" H 4450 4400 50  0001 C CNN
+F 3 "~" H 4450 4400 50  0001 C CNN
+	1    4450 4400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J5
+U 1 1 5CE0B22E
+P 4450 4750
+F 0 "J5" H 4370 4525 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 4616 50  0000 C CNN
+F 2 "footprints:wire-pad" H 4450 4750 50  0001 C CNN
+F 3 "~" H 4450 4750 50  0001 C CNN
+	1    4450 4750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 5CE0B25C
+P 4450 5100
+F 0 "J6" H 4370 4875 50  0000 C CNN
+F 1 "Conn_01x01" H 4370 4966 50  0000 C CNN
+F 2 "footprints:wire-pad" H 4450 5100 50  0001 C CNN
+F 3 "~" H 4450 5100 50  0001 C CNN
+	1    4450 5100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4650 4400 6100 4400
+Wire Wire Line
+	4650 4050 6200 4050
+Wire Wire Line
+	4650 3700 6300 3700
+Wire Wire Line
+	6300 3750 6300 3700
+Wire Wire Line
+	6200 4050 6200 4450
+Wire Wire Line
+	6100 4400 6100 4850
+$EndSCHEMATC
