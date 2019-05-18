@@ -1,4 +1,2 @@
 (sym_lib_table
-  (lib (name library)(type Legacy)(uri ${KIPRJMOD}/library.lib)(options "")(descr ""))
-  (lib (name circuit-rescue)(type Legacy)(uri ${KIPRJMOD}/circuit-rescue.lib)(options "")(descr ""))
 )
