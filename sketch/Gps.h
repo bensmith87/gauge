@@ -10,7 +10,7 @@
 
 class Gps {
   Settings* settings;
-  Adafruit_GPS gps = Adafruit_GPS(&Serial1);
+  Adafruit_GPS gps = Adafruit_GPS(&Serial);
   double lastLatitude = 0;
   double lastLongitude = 0;
   
