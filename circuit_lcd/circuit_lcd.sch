@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:circuit_lcd-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -115,49 +114,14 @@ Wire Wire Line
 $Comp
 L power:+5V #PWR0103
 U 1 1 5CD2DDE9
-P 1400 5300
-F 0 "#PWR0103" H 1400 5150 50  0001 C CNN
-F 1 "+5V" H 1415 5473 50  0000 C CNN
-F 2 "" H 1400 5300 50  0001 C CNN
-F 3 "" H 1400 5300 50  0001 C CNN
-	1    1400 5300
+P 1550 5550
+F 0 "#PWR0103" H 1550 5400 50  0001 C CNN
+F 1 "+5V" H 1565 5723 50  0000 C CNN
+F 2 "" H 1550 5550 50  0001 C CNN
+F 3 "" H 1550 5550 50  0001 C CNN
+	1    1550 5550
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R_POT RV2
-U 1 1 5CD2FBF5
-P 1400 5550
-F 0 "RV2" H 1330 5596 50  0000 R CNN
-F 1 "R_POT" H 1330 5505 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_3266Y_Vertical" H 1400 5550 50  0001 C CNN
-F 3 "~" H 1400 5550 50  0001 C CNN
-	1    1400 5550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1400 5300 1400 5350
-Wire Wire Line
-	1750 5350 1750 5650
-Wire Wire Line
-	1750 5650 2050 5650
-Connection ~ 1400 5350
-Wire Wire Line
-	1400 5350 1400 5400
-$Comp
-L power:GND #PWR0104
-U 1 1 5CD324BD
-P 1400 5700
-F 0 "#PWR0104" H 1400 5450 50  0001 C CNN
-F 1 "GND" H 1405 5527 50  0000 C CNN
-F 2 "" H 1400 5700 50  0001 C CNN
-F 3 "" H 1400 5700 50  0001 C CNN
-	1    1400 5700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1400 5350 1750 5350
-Wire Wire Line
-	1550 5550 2050 5550
 $Comp
 L Motor:Stepper_Motor_bipolar M1
 U 1 1 5CDBCF33
@@ -249,37 +213,37 @@ Wire Wire Line
 Wire Wire Line
 	8050 3750 8050 3850
 Connection ~ 8050 3850
-Text Label 3250 4050 0    50   ~ 0
-SEG0
-Text Label 3250 4150 0    50   ~ 0
-SEG1
-Text Label 3250 4250 0    50   ~ 0
-SEG2
-Text Label 3250 4350 0    50   ~ 0
-SEG3
-Text Label 3250 4450 0    50   ~ 0
-SEG4
-Text Label 3250 4550 0    50   ~ 0
-SEG5
-Text Label 3250 4650 0    50   ~ 0
-SEG6
-Text Label 3250 4750 0    50   ~ 0
-SEG7
-Text Label 2050 4050 2    50   ~ 0
-SEG8
-Text Label 2050 4150 2    50   ~ 0
-SEG9
-Text Label 2050 4250 2    50   ~ 0
-SEG10
-Text Label 2050 4350 2    50   ~ 0
-SEG11
-Text Label 2050 4450 2    50   ~ 0
-SEG12
-Text Label 2050 4550 2    50   ~ 0
-SEG13
-Text Label 2050 4650 2    50   ~ 0
-SEG14
 Text Label 2050 4750 2    50   ~ 0
+SEG0
+Text Label 2050 4650 2    50   ~ 0
+SEG1
+Text Label 2050 4550 2    50   ~ 0
+SEG2
+Text Label 2050 4450 2    50   ~ 0
+SEG3
+Text Label 2050 4350 2    50   ~ 0
+SEG4
+Text Label 2050 4250 2    50   ~ 0
+SEG5
+Text Label 2050 4150 2    50   ~ 0
+SEG6
+Text Label 2050 4050 2    50   ~ 0
+SEG7
+Text Label 3250 4050 0    50   ~ 0
+SEG8
+Text Label 3250 4150 0    50   ~ 0
+SEG9
+Text Label 3250 4250 0    50   ~ 0
+SEG10
+Text Label 3250 4350 0    50   ~ 0
+SEG11
+Text Label 3250 4450 0    50   ~ 0
+SEG12
+Text Label 3250 4550 0    50   ~ 0
+SEG13
+Text Label 3250 4650 0    50   ~ 0
+SEG14
+Text Label 3250 4750 0    50   ~ 0
 SEG15
 Text Label 3250 4850 0    50   ~ 0
 SEG16
@@ -333,37 +297,37 @@ Text Label 5900 5900 0    50   ~ 0
 COM2
 Text Label 5900 5800 0    50   ~ 0
 COM3
-Text Label 4750 4400 2    50   ~ 0
-SEG0
-Text Label 4750 4500 2    50   ~ 0
-SEG1
-Text Label 4750 4600 2    50   ~ 0
-SEG2
-Text Label 4750 4700 2    50   ~ 0
-SEG3
-Text Label 4750 4800 2    50   ~ 0
-SEG4
-Text Label 4750 4900 2    50   ~ 0
-SEG5
-Text Label 4750 5000 2    50   ~ 0
-SEG6
-Text Label 4750 5100 2    50   ~ 0
-SEG7
-Text Label 4750 5200 2    50   ~ 0
-SEG8
-Text Label 4750 5300 2    50   ~ 0
-SEG9
-Text Label 4750 5400 2    50   ~ 0
-SEG10
-Text Label 4750 5500 2    50   ~ 0
-SEG11
-Text Label 4750 5600 2    50   ~ 0
-SEG12
-Text Label 4750 5700 2    50   ~ 0
-SEG13
-Text Label 4750 5800 2    50   ~ 0
-SEG14
 Text Label 4750 5900 2    50   ~ 0
+SEG0
+Text Label 4750 5800 2    50   ~ 0
+SEG1
+Text Label 4750 5700 2    50   ~ 0
+SEG2
+Text Label 4750 5600 2    50   ~ 0
+SEG3
+Text Label 4750 5500 2    50   ~ 0
+SEG4
+Text Label 4750 5400 2    50   ~ 0
+SEG5
+Text Label 4750 5300 2    50   ~ 0
+SEG6
+Text Label 4750 5200 2    50   ~ 0
+SEG7
+Text Label 4750 4400 2    50   ~ 0
+SEG8
+Text Label 4750 4500 2    50   ~ 0
+SEG9
+Text Label 4750 4600 2    50   ~ 0
+SEG10
+Text Label 4750 4700 2    50   ~ 0
+SEG11
+Text Label 4750 4800 2    50   ~ 0
+SEG12
+Text Label 4750 4900 2    50   ~ 0
+SEG13
+Text Label 4750 5000 2    50   ~ 0
+SEG14
+Text Label 4750 5100 2    50   ~ 0
 SEG15
 Text Label 5900 4400 0    50   ~ 0
 SEG16
@@ -691,4 +655,11 @@ F 3 "~" H 5500 2700 50  0001 C CNN
 	1    5500 2700
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	2050 5550 1550 5550
+Wire Wire Line
+	1550 5650 1550 5550
+Wire Wire Line
+	1550 5650 2050 5650
+Connection ~ 1550 5550
 $EndSCHEMATC
