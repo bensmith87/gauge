@@ -291,11 +291,11 @@ Text Label 2050 6350 2    50   ~ 0
 COM3
 Text Label 4750 6000 2    50   ~ 0
 COM0
-Text Label 5900 6000 0    50   ~ 0
+Text Label 4750 6100 2    50   ~ 0
 COM1
-Text Label 5900 5900 0    50   ~ 0
+Text Label 5900 6100 0    50   ~ 0
 COM2
-Text Label 5900 5800 0    50   ~ 0
+Text Label 5900 6000 0    50   ~ 0
 COM3
 Text Label 4750 5900 2    50   ~ 0
 SEG0
@@ -662,4 +662,12 @@ Wire Wire Line
 Wire Wire Line
 	1550 5650 2050 5650
 Connection ~ 1550 5550
+Text Label 3250 6250 0    50   ~ 0
+SEG30
+Text Label 3250 6350 0    50   ~ 0
+SEG31
+Text Label 5900 5900 0    50   ~ 0
+SEG31
+Text Label 5900 5800 0    50   ~ 0
+SEG30
 $EndSCHEMATC
