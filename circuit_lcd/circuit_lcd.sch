@@ -359,8 +359,6 @@ Text Label 5900 5700 0    50   ~ 0
 SEG29
 Text Label 2050 4850 2    50   ~ 0
 LCD_CS
-Text Label 2050 4950 2    50   ~ 0
-LCD_RD
 Text Label 2050 5050 2    50   ~ 0
 LCD_WR
 Text Label 2050 5150 2    50   ~ 0
@@ -371,10 +369,8 @@ Text Label 7650 5350 2    50   ~ 0
 EN
 Text Notes 7250 3450 0    50   ~ 0
 TODO: can the stepper be directly driven, maybe just add diodes
-Text Label 2450 3150 2    50   ~ 0
-LCD_CS
 Text Label 2450 3050 2    50   ~ 0
-LCD_RD
+LCD_CS
 Text Label 2450 2950 2    50   ~ 0
 LCD_WR
 Text Label 2450 2850 2    50   ~ 0
@@ -543,17 +539,6 @@ High Beam
 Text Notes 6050 2650 0    50   ~ 0
 Turn Signals
 $Comp
-L Connector_Generic:Conn_01x04 J4
-U 1 1 5D1C6209
-P 2650 2950
-F 0 "J4" H 2730 2942 50  0000 L CNN
-F 1 "Conn_01x04" H 2730 2851 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 2650 2950 50  0001 C CNN
-F 3 "~" H 2650 2950 50  0001 C CNN
-	1    2650 2950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x04 J3
 U 1 1 5D1C6373
 P 2650 2350
@@ -670,4 +655,15 @@ Text Label 5900 5900 0    50   ~ 0
 SEG31
 Text Label 5900 5800 0    50   ~ 0
 SEG30
+$Comp
+L Connector_Generic:Conn_01x03 J4
+U 1 1 5D29DC01
+P 2650 2950
+F 0 "J4" H 2730 2992 50  0000 L CNN
+F 1 "Conn_01x03" H 2730 2901 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 2650 2950 50  0001 C CNN
+F 3 "~" H 2650 2950 50  0001 C CNN
+	1    2650 2950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

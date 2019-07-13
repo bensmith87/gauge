@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:circuit_mcu-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -312,8 +313,6 @@ Text Label 2100 4100 0    50   ~ 0
 STEP_4
 Text Label 2100 3400 0    50   ~ 0
 LCD_CS
-Text Label 2100 3500 0    50   ~ 0
-LCD_RD
 Text Label 2100 3600 0    50   ~ 0
 LCD_WR
 Text Label 2100 3700 0    50   ~ 0
@@ -682,17 +681,6 @@ F 3 "~" H 1500 6050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2000 6950 2350 6950
-$Comp
-L Connector_Generic:Conn_01x04 J2
-U 1 1 5D1D7F80
-P 9300 1250
-F 0 "J2" H 9380 1242 50  0000 L CNN
-F 1 "Conn_01x04" H 9380 1151 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 9300 1250 50  0001 C CNN
-F 3 "~" H 9300 1250 50  0001 C CNN
-	1    9300 1250
-	1    0    0    -1  
-$EndComp
 Text Label 9150 1950 2    50   ~ 0
 STEP_1
 Text Label 9150 2050 2    50   ~ 0
@@ -715,10 +703,8 @@ $EndComp
 Text Label 9100 1150 2    50   ~ 0
 LCD_CS
 Text Label 9100 1250 2    50   ~ 0
-LCD_RD
-Text Label 9100 1350 2    50   ~ 0
 LCD_WR
-Text Label 9100 1450 2    50   ~ 0
+Text Label 9100 1350 2    50   ~ 0
 LCD_DATA
 Text Label 2100 2000 0    50   ~ 0
 MOSI
@@ -905,4 +891,15 @@ Text Label 8100 5700 0    50   ~ 0
 V_BCKP
 Wire Wire Line
 	8100 5850 8100 5700
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 5D298ECD
+P 9300 1250
+F 0 "J2" H 9380 1292 50  0000 L CNN
+F 1 "Conn_01x03" H 9380 1201 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 9300 1250 50  0001 C CNN
+F 3 "~" H 9300 1250 50  0001 C CNN
+	1    9300 1250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
